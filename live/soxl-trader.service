@@ -1,0 +1,26 @@
+[Unit]
+Description=SOXL Trading Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vikramatmuri
+WorkingDirectory=/home/vikramatmuri/robinhood_trader
+
+# Credentials file — key=value format, no "export" prefix, chmod 600
+# See live/PI_SETUP.md for how to create this file.
+EnvironmentFile=/home/vikramatmuri/robinhood_trader/.env
+
+ExecStart=/home/vikramatmuri/robinhood_trader/.venv/bin/python /home/vikramatmuri/robinhood_trader/live/daemon.py
+
+# Restart automatically on crash, but not on clean stop (systemctl stop)
+Restart=on-failure
+RestartSec=30
+
+# All output goes to journald — view with: sudo journalctl -u soxl-trader -f
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
