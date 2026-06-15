@@ -1,0 +1,26 @@
+{
+  "_comment": "SOXL live trading config — locked strategy params from backtest round AO",
+
+  "ticker": "SOXL",
+
+  "ema_fast": 5,
+  "ema_slow": 20,
+
+  "mom_w": 5,
+  "vel_w": 6,
+  "mom_buy": -3,
+  "mom_sell": 8,
+  "vel_thresh": -3,
+  "trail_pct": 0.11,
+
+  "lookback_days": 90,
+
+  "rh_account": "979859477",
+
+  "fgi_data_csv": "../fgi_data.csv",
+  "fgi_data_2_csv": "../fgi_data_2.csv",
+  "state_file": "../trade_state.json",
+  "log_file": "../trade_log.csv",
+
+  "ntfy_topic": ""
+}

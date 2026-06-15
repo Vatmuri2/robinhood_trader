@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "robinhood": {
+      "type": "http",
+      "url": "https://agent.robinhood.com/mcp/trading",
+      "headers": {
+        "X-Email": "${email}",
+        "X-Password": "${password}"
+      }
+    }
+  }
+}
